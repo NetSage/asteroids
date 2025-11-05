@@ -59,3 +59,4 @@ class Player(CircleShape):
             velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOT_SPEED
             Shot(self.position.x, self.position.y, velocity)
             self.shot_timer = PLAYER_SHOOT_COOLDOWN
+        pass
