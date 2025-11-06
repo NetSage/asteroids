@@ -5,9 +5,14 @@ from constants import *
 from player import Player
 from circleshape import CircleShape
 from shot import Shot
+from logger import log_state
 
 
 def main():
+    print("Starting Asteroids!")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
+
     pygame.init()
 
     asteroids = pygame.sprite.Group()
@@ -27,6 +32,7 @@ def main():
     asteroid_field = AsteroidField()
 
     while True:
+        log_state()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -46,9 +52,6 @@ def main():
 
         pygame.display.flip()
         clock.tick(60)
-    print("Starting Asteroids!")
-    print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen height: {SCREEN_HEIGHT}")
 
 
 if __name__ == "__main__":
